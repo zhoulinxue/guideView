@@ -45,11 +45,8 @@ public class DisplayUtil {
 	public static Point getScreenMetrics(Context context) {
 		DisplayMetrics dm = context.getResources().getDisplayMetrics();
 		int w_screen = dm.widthPixels;
-		int h_screen = dm.heightPixels;
-		Log.i(TAG, "Screen---Width = " + w_screen + " Height = " + h_screen
-				+ " densityDpi = " + dm.densityDpi);
+		int h_screen = dm.heightPixels+getStatusBarHeight(context);
 		return new Point(w_screen, h_screen);
-
 	}
 
 	/**
@@ -81,7 +78,6 @@ public class DisplayUtil {
 				- DisplayUtil.dip2px(context, rect.right);
 		int y2 = DisplayUtil.getScreenMetrics(context).y
 				- DisplayUtil.dip2px(context, rect.bottom);
-		Log.i(TAG, x1 + "@" + y1 + "@" + x2 + "@" + y2);
 		return new Rect(x1, y1, x2, y2);
 	}
 

@@ -16,10 +16,8 @@ import android.graphics.Paint.Style;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
-import androidx.appcompat.widget.AppCompatImageView;
 
 /**
  * 希望有一天可以开源出来  org.zhx
@@ -31,6 +29,10 @@ public class GuideView extends View {
     private Paint mAreaPaint;
     private Rect mCenterRect = null;
     private Context mContext;
+
+    public GuideView(Context context) {
+        this(context,null);
+    }
 
     public GuideView(Context context, AttributeSet attrs) {
         super(context, attrs);
